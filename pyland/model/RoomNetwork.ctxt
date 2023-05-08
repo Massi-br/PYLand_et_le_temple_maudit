@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=RoomNetwork
+comment1.params=
+comment1.target=RoomNetwork()
+comment2.params=r\ d
+comment2.target=boolean\ canExit(IRoom,\ pyland.util.Direction)
+comment3.params=r\ d
+comment3.target=IRoom\ getRoom(IRoom,\ pyland.util.Direction)
+comment4.params=
+comment4.target=void\ clear()
+comment5.params=r1\ d\ r2
+comment5.target=void\ connect(IRoom,\ pyland.util.Direction,\ IRoom)
+comment6.params=r\ d
+comment6.target=IRoom\ getRoomImpl(IRoom,\ pyland.util.Direction)
+comment6.text=\r\n\ La\ salle\ \u00C3\u00A0\ laquelle\ on\ acc\u00C3\u00A8de\ \u00C3\u00A0\ partir\ de\ r,\ dans\ la\ direction\ d.\r\n\ NB\ \:\ result\ peut\ \u00C3\u00AAtre\ null,\ cela\ signifie\ qu'il\ n'y\ a\ pas\ de\ salle\r\n\ \ associ\u00C3\u00A9e\ \u00C3\u00A0\ r\ dans\ la\ Direction\ d.\r\n\ @pre\r\n\ \ \ \ \ r\ \!\=\ null\ &&\ d\ \!\=\ null\r\n\ @post\r\n\ \ \ \ \ data.get(r)\ \=\=\ null\ ||\ ((Map)\ data.get(r)).get(d)\ \=\=\ null\r\n\ \ \ \ \ \ \ \ \ \=\=>\ result\ \=\=\ null\r\n\ \ \ \ \ data.get(r)\ \!\=\ null\ &&\ ((Map)\ data.get(r)).get(d)\ \!\=\ null\r\n\ \ \ \ \ \ \ \ \ \=\=>\ result\ \=\=\ ((Map)\ data.get(r)).get(d)\r\n
+comment7.params=src\ d\ dest
+comment7.target=void\ setRelationInOneWay(IRoom,\ pyland.util.Direction,\ IRoom)
+comment7.text=\r\n\ Etablit\ une\ relation\ entre\ src\ et\ dest,\ dans\ la\ direction\ d\ en\ partant\r\n\ \ de\ src.\r\n\ L'invariant\ n'est\ pas\ requis\ en\ entr\u00C3\u00A9e\ et\ n'est\ pas\ respect\u00C3\u00A9\ en\ sortie\ \!\r\n\ @pre\r\n\ \ \ \ \ src\ \!\=\ null\ &&\ d\ \!\=\ null\ &&\ dest\ \!\=\ null\r\n\ \ \ \ \ getRoom(src,\ d)\ \=\=\ null\r\n\ @post\r\n\ \ \ \ \ getRoom(src,\ d)\ \=\=\ dest\r\n
+comment8.params=r\ d
+comment8.target=void\ unsetRelationInOneWay(IRoom,\ pyland.util.Direction)
+comment8.text=\r\n\ Sachant\ qu'il\ existe\ une\ relation\ \u00C3\u00A0\ partir\ de\ r\ dans\ la\ direction\ d,\r\n\ \ supprime\ uniquement\ cette\ relation.\r\n\ L'invariant\ n'est\ pas\ requis\ en\ entr\u00C3\u00A9e\ et\ n'est\ pas\ respect\u00C3\u00A9\ en\ sortie\ \!\r\n\ @pre\r\n\ \ \ \ \ r\ \!\=\ null\ &&\ d\ \!\=\ null\r\n\ \ \ \ \ getRoom(r,\ d)\ \!\=\ null\r\n\ @post\r\n\ \ \ \ \ getRoom(r,\ d)\ \=\=\ null\r\n
+numComments=9

@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Room
+comment0.text=\r\n\ Mod\u00C3\u00A9lise\ les\ salles\ du\ labyrinthe.\r\n\ Les\ salles\ sont\ reli\u00C3\u00A9es\ entre\ elles\ et\ le\ joueur\ les\ traverse.\r\n\ @inv\ <pre>\r\n\ \ \ \ \ forall\ p\ in\ IPlayer\ \:\r\n\ \ \ \ \ \ \ \ \ this.getVisitor()\ \=\=\ p\ \=\=>\ this\ \=\=\ p.getLocation()\ </pre>\r\n\ @cons\ <pre>\r\n\ \ \ \ \ $POST$\r\n\ \ \ \ \ \ \ \ \ getVisitor()\ \=\=\ null\ </pre>\r\n
+comment1.params=
+comment1.target=Room()
+comment2.params=
+comment2.target=IPlayer\ getVisitor()
+comment2.text=\r\n\ Le\ joueur\ qui\ se\ trouve\ dans\ cette\ salle.\r\n
+comment3.params=v
+comment3.target=void\ setVisitor(IPlayer)
+comment3.text=\r\n\ Associe\ le\ visiteur\ <code>v</code>\ \u00C3\u00A0\ cette\ salle.\r\n\ @pre\ <pre>\r\n\ \ \ \ \ getVisitor()\ \=\=\ null\r\n\ \ \ \ \ v\ \!\=\ null\ &&\ \!v.hasLeft()\r\n\ \ \ \ \ v.getLocation()\ \=\=\ null\ ||\ v.getLocation()\ \=\=\ this\ </pre>\r\n\ @post\ <pre>\r\n\ \ \ \ \ getVisitor()\ \=\=\ v\ </pre>\r\n
+comment4.params=
+comment4.target=void\ unsetVisitor()
+comment4.text=\r\n\ Dissocie\ cette\ salle\ de\ son\ visiteur.\r\n\ @pre\ <pre>\r\n\ \ \ \ \ getVisitor()\ \!\=\ null\r\n\ \ \ \ \ \!getVisitor().hasLeft()\ </pre>\r\n\ @post\ <pre>\r\n\ \ \ \ \ getVisitor()\ \=\=\ null\ </pre>\r\n
+numComments=5

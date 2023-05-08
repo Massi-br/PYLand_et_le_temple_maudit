@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=RoomNotFoundException
+comment1.params=
+comment1.target=RoomNotFoundException()
+comment2.params=message
+comment2.target=RoomNotFoundException(java.lang.String)
+numComments=3

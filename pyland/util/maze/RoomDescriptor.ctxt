@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=RoomDescriptor
+comment1.params=r
+comment1.target=RoomDescriptor(pyland.model.IRoom)
+comment2.params=light
+comment2.target=java.lang.String\ describe(boolean)
+numComments=3

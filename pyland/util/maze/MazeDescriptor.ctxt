@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=MazeDescriptor
+comment1.params=m
+comment1.target=MazeDescriptor(Maze)
+comment2.params=light
+comment2.target=java.lang.String\ describe(boolean)
+comment3.params=
+comment3.target=void\ initDescriptors()
+comment4.params=r\ c
+comment4.target=IDescriptor\ createWD(int,\ int)
+comment5.params=r\ c
+comment5.target=IDescriptor\ createCD(int,\ int)
+comment6.params=r\ c
+comment6.target=IDescriptor\ createFD(int,\ int)
+comment7.params=i\ light
+comment7.target=java.lang.String\ describeRoomLine(int,\ boolean)
+comment7.text=\r\n\ Dessine\ la\ ieme\ ligne\ de\ pi\u00C3\u00A8ces.\r\n
+comment8.params=i\ light
+comment8.target=java.lang.String\ describeFloorLine(int,\ boolean)
+comment8.text=\r\n\ Dessine\ le\ ieme\ trait\ horizontal\ de\ la\ grille.\r\n
+numComments=9

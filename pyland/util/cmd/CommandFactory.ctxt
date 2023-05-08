@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=CommandFactory
+comment0.text=\r\n\ Cette\ usine\ \u00C3\u00A0\ commandes\ cr\u00C3\u00A9e\ des\ commandes\ \u00C3\u00A0\ la\ demande\ de\ l'analyseur.\r\n
+comment1.params=
+comment1.target=CommandFactory()
+comment2.params=name\ args
+comment2.target=ICommand\ getInstance(java.lang.String,\ java.lang.String[])
+comment2.text=\r\n\ Pour\ obtenir\ une\ instance\ de\ commande\ en\ fonction\ du\ nom\ propos\u00C3\u00A9.\r\n
+comment3.params=
+comment3.target=java.lang.String\ getAllCommands()
+comment3.text=\r\n\ Cha\u00C3\u00AEne\ de\ toutes\ les\ commandes\ disponibles\ avec\ leur\ syntaxe.\r\n
+numComments=4

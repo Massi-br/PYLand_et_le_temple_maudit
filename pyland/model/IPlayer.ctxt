@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=IPlayer
+comment0.text=\r\n\ Mod\u00C3\u00A9lise\ les\ joueurs.\r\n\ Un\ joueur\ se\ d\u00C3\u00A9place\ de\ salle\ en\ salle\ \u00C3\u00A0\ la\ recherche\ de\ la\ sortie\r\n\ \ du\ labyrinthe.\r\n\ @inv\ <pre>\r\n\ \ \ \ \ forall\ r\ in\ IRoom\ \:\r\n\ \ \ \ \ \ \ \ \ this.getLocation()\ \=\=\ r\ \=\=>\ this\ \=\=\ r.getVisitor()\ </pre>\r\n\ @cons\ <pre>\r\n\ \ \ \ \ $DESC$\ Un\ joueur\ qui\ n'est\ pas\ encore\ plac\u00C3\u00A9\ dans\ une\ salle.\r\n\ \ \ \ \ $ARGS$\ -\r\n\ \ \ \ \ $POST$\r\n\ \ \ \ \ \ \ \ \ getLocation()\ \=\=\ null\r\n\ \ \ \ \ \ \ \ \ \!hasLeft()\ </pre>\r\n
+comment1.params=
+comment1.target=IRoom\ getLocation()
+comment1.text=\r\n\ La\ salle\ dans\ laquelle\ se\ trouve\ le\ joueur.\r\n
+comment2.params=
+comment2.target=boolean\ hasLeft()
+comment2.text=\r\n\ Indique\ si\ le\ joueur\ a\ arr\u00C3\u00AAt\u00C3\u00A9\ la\ partie.\r\n
+comment3.params=
+comment3.target=void\ leave()
+comment3.text=\r\n\ Fait\ s'arr\u00C3\u00AAter\ le\ joueur.\r\n\ @pre\ <pre>\r\n\ \ \ \ \ \!hasLeft()\ </pre>\r\n\ @post\ <pre>\r\n\ \ \ \ \ hasLeft()\r\n\ \ \ \ \ getLocation()\ \=\=\ old\ getLocation()\ </pre>\r\n
+comment4.params=r
+comment4.target=void\ setLocation(IRoom)
+comment4.text=\r\n\ Associe\ la\ salle\ <code>r</code>\ \u00C3\u00A0\ ce\ joueur.\r\n\ @pre\ <pre>\r\n\ \ \ \ \ \!hasLeft()\r\n\ \ \ \ \ getLocation()\ \=\=\ null\ &&\ r\ \!\=\ null\r\n\ \ \ \ \ r.getVisitor()\ \=\=\ null\ ||\ r.getVisitor()\ \=\=\ this\ </pre>\r\n\ @post\ <pre>\r\n\ \ \ \ \ getLocation()\ \=\=\ r\ </pre>\r\n
+comment5.params=
+comment5.target=void\ unsetLocation()
+comment5.text=\r\n\ Dissocie\ ce\ joueur\ de\ sa\ salle.\r\n\ @pre\ <pre>\r\n\ \ \ \ \ \!hasLeft()\r\n\ \ \ \ \ getLocation()\ \!\=\ null\ </pre>\r\n\ @post\ <pre>\r\n\ \ \ \ \ getLocation()\ \=\=\ null\ </pre>\r\n
+numComments=6

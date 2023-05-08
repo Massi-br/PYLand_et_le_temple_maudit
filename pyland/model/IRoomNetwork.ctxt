@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=IRoomNetwork
+comment0.text=\r\n\ Mod\u00C3\u00A9lise\ le\ r\u00C3\u00A9seau\ de\ connexion\ entre\ les\ salles\ du\ labyrinthe.\r\n\r\n\ @inv\ <pre>\r\n\ \ \ \ \ forall\ r\ in\ IRoom,\ d\ in\ Direction\ \:\r\n\ \ \ \ \ \ \ \ \ canExit(r,\ d)\ <\=\=>\ getRoom(r,\ d)\ \!\=\ null\r\n\ \ \ \ \ forall\ r,\ s\ in\ IRoom,\ d\ in\ Direction\ \:\r\n\ \ \ \ \ \ \ \ \ getRoom(r,\ d)\ \=\=\ s\ <\=\=>\ getRoom(s,\ d.opposite())\ \=\=\ r\ </pre>\r\n\ @cons\ <pre>\r\n\ \ \ \ \ $POST$\r\n\ \ \ \ \ \ \ \ \ forall\ r\ in\ IRoom,\ d\ in\ Direction\ \:\ \!canExit(r,\ d)\ </pre>\r\n
+comment1.params=r\ d
+comment1.target=boolean\ canExit(IRoom,\ pyland.util.Direction)
+comment1.text=\r\n\ Indique\ s'il\ y\ a\ un\ passage\ dans\ la\ direction\ <code>d</code>\ \u00C3\u00A0\ partir\ de\r\n\ \ <code>r</code>.\r\n\ @pre\ <pre>\r\n\ \ \ \ \ r\ \!\=\ null\ &&\ d\ \!\=\ null\ </pre>\r\n
+comment2.params=r\ d
+comment2.target=IRoom\ getRoom(IRoom,\ pyland.util.Direction)
+comment2.text=\r\n\ La\ salle\ \u00C3\u00A0\ laquelle\ on\ acc\u00C3\u00A8de\ \u00C3\u00A0\ partir\ de\ r,\ dans\ la\ direction\ d.\r\n\ @pre\ <pre>\r\n\ \ \ \ \ r\ \!\=\ null\ &&\ d\ \!\=\ null\ </pre>\r\n
+comment3.params=
+comment3.target=void\ clear()
+comment3.text=\r\n\ Supprime\ tout\ passage\ de\ ce\ r\u00C3\u00A9seau.\r\n\ @post\ <pre>\r\n\ \ \ \ \ forall\ r\ in\ IRoom,\ d\ in\ Direction\ \:\ \!canExit(r,\ d)\ </pre>\r\n
+comment4.params=r1\ d\ r2
+comment4.target=void\ connect(IRoom,\ pyland.util.Direction,\ IRoom)
+comment4.text=\r\n\ Etablit\ un\ passage\ entre\ r1\ et\ r2,\ dans\ la\ direction\ d.\r\n\ @pre\ <pre>\r\n\ \ \ \ \ r1\ \!\=\ null\ &&\ d\ \!\=\ null\ &&\ r2\ \!\=\ null\ </pre>\r\n\ @post\ <pre>\r\n\ \ \ \ \ Let\ x\ \:\:\=\ old\ getRoom(r1,\ d)\r\n\ \ \ \ \ \ \ \ \ y\ \:\:\=\ old\ getRoom(r2,\ d.opposite())\r\n\ \ \ \ \ x\ \!\=\ null\ &&\ x\ \!\=\ r2\ \=\=>\ getRoom(x,\ d.opposite())\ \=\=\ null\r\n\ \ \ \ \ y\ \!\=\ null\ &&\ y\ \!\=\ r1\ \=\=>\ getRoom(y,\ d)\ \=\=\ null\r\n\ \ \ \ \ getRoom(r1,\ d)\ \=\=\ r2\ </pre>\r\n
+numComments=5

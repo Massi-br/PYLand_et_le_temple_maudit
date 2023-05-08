@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=MazeRoom
+comment0.text=\r\n\ Pi\u00C3\u00A8ces\ pour\ la\ constitution\ des\ labyrinthes.\r\n
+comment1.params=r
+comment1.target=MazeRoom(pyland.model.IRoom)
+comment2.params=
+comment2.target=IDescriptor\ getDesc()
+comment3.params=
+comment3.target=pyland.model.IRoom\ getRoom()
+comment4.params=
+comment4.target=boolean\ isConnected()
+comment5.params=
+comment5.target=boolean\ isVisited()
+comment6.params=
+comment6.target=void\ setConnected()
+comment7.params=
+comment7.target=void\ setVisited()
+comment8.params=
+comment8.target=void\ reset()
+numComments=9

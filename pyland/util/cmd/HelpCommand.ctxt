@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=HelpCommand
+comment0.text=\r\n\ @inv\ <pre>\r\n\ \ \ \ \ argsNb()\ \=\=\ 0\ </pre>\r\n
+comment1.params=args
+comment1.target=HelpCommand(java.lang.String[])
+comment2.params=p
+comment2.target=void\ executeFor(pyland.model.IPlayer)
+numComments=3

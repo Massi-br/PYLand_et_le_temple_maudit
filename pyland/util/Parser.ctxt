@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Parser
+comment0.text=\r\n\ Un\ analyseur\ lit\ les\ caract\u00C3\u00A8res\ tap\u00C3\u00A9s\ par\ l'utilisateur\ et\ les\r\n\ \ interpr\u00C3\u00A8te\ comme\ des\ directions.\r\n\ Chaque\ appel\ \u00C3\u00A0\ <code>readCommandFromInput()</code>\ permet\ de\ lire\ une\r\n\ \ ligne\ sur\ le\ canal\ d'entr\u00C3\u00A9e\ et\ de\ l'interpr\u00C3\u00A9ter\ comme\ une\ direction\ \u00C3\u00A0\r\n\ \ laquelle\ on\ pourra\ acc\u00C3\u00A9der\ par\ <code>getNextDirection()</code>.\r\n
+comment1.params=input
+comment1.target=Parser(java.io.Reader)
+comment1.text=\r\n\ @pre\ <pre>\r\n\ \ \ \ \ input\ \!\=\ null\ </pre>\r\n
+comment2.params=
+comment2.target=cmd.ICommand\ getCurrentCommand()
+comment2.text=\r\n\ La\ derni\u00C3\u00A8re\ commande\ lue.\r\n
+comment3.params=
+comment3.target=void\ readCommandFromInput()
+comment3.text=\r\n\ @post\ <pre>\r\n\ \ \ \ \ Une\ ligne\ a\ \u00C3\u00A9t\u00C3\u00A9\ lue\ sur\ le\ canal\ d'entr\u00C3\u00A9e\r\n\ \ \ \ \ getCurrentCommand()\ \!\=\ null\r\n\ \ \ \ \ \ \ \ \ <\=\=>\ la\ ligne\ lue\ est\ de\ la\ forme\ \:\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ <\ nom\ cmd\ >\ <\ arg1\ >\ <\ arg2\ >\ ...\ <\ argn\ >\r\n\ \ \ \ \ getCurrentCommand()\ \=\=\ null\r\n\ \ \ \ \ \ \ \ \ <\=\=>\ la\ ligne\ lue\ est\ vide\ ||\ il\ y\ a\ eu\ une\ erreur\ d'E/S\r\n\ \ \ \ \ getCurrentCommand()\ \!\=\ null\r\n\ \ \ \ \ \ \ \ \ \=\=>\ getCurrentCommand().getName().equals(<\ nom\ cmd\ >)\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ getCurrentCommand().getArgument(i).equals(<\ argi+1\ >)\ </pre>\r\n
+comment4.params=line
+comment4.target=void\ setCurrentData(java.lang.String)
+numComments=5

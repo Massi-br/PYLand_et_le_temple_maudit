@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=RoomNetworkFactory
+comment0.text=\r\n\ Fabrique\ du\ r\u00C3\u00A9seau\ des\ salles.\r\n\ Cette\ classe\ est\ non\ instanciable\ car\ c'est\ une\ fabrique.\r\n\ Elle\ est\ dot\u00C3\u00A9e\ d'une\ m\u00C3\u00A9thode\ statique\ qui\ donne\ acc\u00C3\u00A8s\ \u00C3\u00A0\ l'instance\ de\r\n\ \ IRoomNetwork\ n\u00C3\u00A9cessaire\ au\ jeu\ sans\ que\ l'on\ ait\ connaissance\ de\ la\ classe\r\n\ \ de\ cette\ instance.\r\n
+comment1.params=
+comment1.target=RoomNetworkFactory()
+comment2.params=
+comment2.target=IRoomNetwork\ get()
+numComments=3

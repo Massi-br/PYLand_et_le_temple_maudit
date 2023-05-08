@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=Direction
+comment0.text=\r\n\ Enum\u00C3\u00A8re\ toutes\ les\ directions\ connues\ de\ Pyland\ \:\r\n\ \ \ \ \ {NORTH,\ EAST,\ SOUTH,\ WEST}\r\n\ Une\ direction\ peut\ aussi\ \u00C3\u00AAtre\ obtenue\ par\ son\ nom.\r\n\ @inv\ <pre>\r\n\ \ \ \ \ name()\ \!\=\ null\r\n\ \ \ \ \ opposite()\ \!\=\ null\r\n\ \ \ \ \ NORTH.name().equals("north")\r\n\ \ \ \ \ EAST.name().equals("east")\r\n\ \ \ \ \ SOUTH.name().equals("south")\r\n\ \ \ \ \ WEST.name().equals("west")\r\n\ \ \ \ \ NORTH.opposite()\ \=\=\ SOUTH\r\n\ \ \ \ \ EAST.opposite()\ \=\=\ WEST\r\n\ \ \ \ \ SOUTH.opposite()\ \=\=\ NORTH\r\n\ \ \ \ \ WEST.opposite()\ \=\=\ EAST\ </pre>\r\n
+comment1.params=name
+comment1.target=Direction(java.lang.String)
+comment1.text=\r\n\ Une\ nouvelle\ direction.\r\n\ @pre\ <pre>\r\n\ \ \ \ \ name\ \!\=\ null\ </pre>\r\n\ @post\ <pre>\r\n\ \ \ \ \ name().equals(name)\ </pre>\r\n
+comment2.params=
+comment2.target=java.lang.String\ name()
+comment3.params=
+comment3.target=Direction\ opposite()
+comment4.params=name
+comment4.target=Direction\ valueOf(java.lang.String)
+comment4.text=\r\n\ Convertit\ si\ possible\ la\ cha\u00C3\u00AEne\ <code>name</code>\ en\ Direction.\r\n\ @pre\ <pre>\r\n\ \ \ \ \ name\ \!\=\ null\ </pre>\r\n\ @post\ <pre>\r\n\ \ \ \ \ name.toLowerCase().beginsWith("n")\ \=\=>\ result\ \=\=\ NORTH\r\n\ \ \ \ \ name.toLowerCase().beginsWith("e")\ \=\=>\ result\ \=\=\ EAST\r\n\ \ \ \ \ name.toLowerCase().beginsWith("s")\ \=\=>\ result\ \=\=\ SOUTH\r\n\ \ \ \ \ name.toLowerCase().beginsWith("w")\ \=\=>\ result\ \=\=\ WEST\r\n\ \ \ \ \ dans\ tous\ les\ autres\ cas\ \ \ \ \ \ \ \ \ \ \ \=\=>\ result\ \=\=\ null\ </pre>\r\n
+comment5.params=
+comment5.target=Direction[]\ allDirections()
+comment5.text=\r\n\ Un\ tableau\ sur\ toutes\ les\ directions\ possibles.\r\n\ @post\ <pre>\r\n\ \ \ \ \ result\ est\ un\ tableau\ de\ la\ forme\ [NORTH,\ EAST,\ SOUTH,\ WEST]\ </pre>\r\n
+numComments=6

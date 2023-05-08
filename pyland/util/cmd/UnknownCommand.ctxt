@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=UnknownCommand
+comment0.text=\r\n\ @inv\ <pre>\r\n\ \ \ \ \ argsNb()\ \=\=\ 1\r\n\ \ \ \ \ getArgument(0)\ \!\=\ null\r\n\ \ \ \ \ getArgument(0)\ est\ la\ phrase\ non\ reconnue,\ tap\u00C3\u00A9e\ par\ le\ joueur\ humain\r\n\ \ \ \ \ getArgument(0)\ se\ termine\ par\ le\ message\ d'erreur\ obtenu\ lors\ de\ la\r\n\ \ \ \ \ \ construction\ de\ cette\ commande\ inconnue\ </pre>\r\n
+comment1.params=args
+comment1.target=UnknownCommand(java.lang.String[])
+comment1.text=\r\n\ @pre\ <pre>\r\n\ \ \ \ \ args\ \!\=\ null\r\n\ \ \ \ \ |args|\ >\ 0\r\n\ \ \ \ \ args[|args|\ -\ 1]\ contient\ le\ message\ d'erreur\ obtenu\ lors\ de\ la\r\n\ \ \ \ \ \ construction\ de\ cette\ commande\ inconnue\ </pre>\r\n\ @post\ <pre>\r\n\ \ \ \ \ getArgument(0)\ est\ la\ concat\u00C3\u00A9nation\ des\ \u00C3\u00A9l\u00C3\u00A9ments\ de\ args\ </pre>\r\n
+comment2.params=p
+comment2.target=void\ executeFor(pyland.model.IPlayer)
+comment3.params=args
+comment3.target=java.lang.Object[]\ convertArgs(java.lang.String[])
+numComments=4

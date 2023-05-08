@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=ICommand
+comment0.text=\r\n\ Mod\u00C3\u00A9lise\ les\ commandes.\r\n\r\n\ @inv\ <pre>\r\n\ \ \ \ argsNb()\ >\=\ 0\r\n\ \ \ \ describeLastAction()\ \!\=\ null\r\n\ \ \ \ (getName()\ \!\=\ null)\ &&\ \!getName().equals("")\ </pre>\r\n\ @cons\ <pre>\r\n\ $DESC$\r\n\ \ \ \ \ Une\ commande\ munie\ d'une\ s\u00C3\u00A9quence\ d'arguments\ dont\ la\ repr\u00C3\u00A9sentation\r\n\ \ \ \ \ \ textuelle\ se\ trouve\ dans\ args.\r\n\ $ARGS$\r\n\ \ \ \ \ String[]\ args\r\n\ $PRE$\r\n\ \ \ \ \ args\ \!\=\ null\r\n\ $POST$\r\n\ \ \ \ \ Let\ min\ \:\:\=\ min(argsNb(),\ |args|)\r\n\ \ \ \ \ forall\ i,\ 0\ <\=\ i\ <\ min\ \:\r\n\ \ \ \ \ \ \ \ \ getArgument(i)\ est\ l'objet\ que\ repr\u00C3\u00A9sente\ la\ cha\u00C3\u00AEne\ args[i]\r\n\ \ \ \ \ forall\ i,\ min\ <\=\ i\ <\ argsNb()\ \:\r\n\ \ \ \ \ \ \ \ \ getArgument(i)\ \=\=\ null\r\n\ \ \ \ \ describeLastAction().equals("")\ </pre>\r\n
+comment1.params=
+comment1.target=int\ argsNb()
+comment1.text=\r\n\ Le\ nombre\ d'arguments\ de\ cette\ commande.\r\n
+comment2.params=
+comment2.target=java.lang.String\ describeLastAction()
+comment2.text=\r\n\ D\u00C3\u00A9crit\ le\ r\u00C3\u00A9sultat\ de\ la\ derni\u00C3\u00A8re\ ex\u00C3\u00A9cution\ de\ cette\ commande.\r\n
+comment3.params=i
+comment3.target=java.lang.Object\ getArgument(int)
+comment3.text=\r\n\ Le\ i\u00C3\u00A8me\ argument\ de\ cette\ commande.\r\n\ @pre\ <pre>\r\n\ \ \ \ \ 0\ <\=\ i\ <\ argsNb()\ </pre>\r\n
+comment4.params=
+comment4.target=java.lang.String\ getName()
+comment4.text=\r\n\ Le\ nom\ de\ cette\ commande\ (extrait\ du\ nom\ de\ la\ classe).\r\n
+comment5.params=p
+comment5.target=void\ executeFor(pyland.model.IPlayer)
+comment5.text=\r\n\ Ex\u00C3\u00A9cute\ cette\ commande\ pour\ le\ joueur\ <code>p</code>.\r\n\ Il\ se\ peut\ que\ l'ex\u00C3\u00A9cution\ de\ cette\ commande\ ait\ modifi\u00C3\u00A9\ un\ ou\ plusieurs\r\n\ \ arguments\ de\ la\ commande...\r\n\ @pre\ <pre>\r\n\ \ \ \ \ p\ \!\=\ null\ </pre>\r\n\ @post\ <pre>\r\n\ \ \ \ \ p\ a\ \u00C3\u00A9t\u00C3\u00A9\ modifi\u00C3\u00A9\ en\ accord\ avec\ l'ex\u00C3\u00A9cution\ de\ la\ commande\r\n\ \ \ \ \ describeLastAction()\ refl\u00C3\u00A8te\ l'ex\u00C3\u00A9cution\ de\ cette\ commande\r\n\ \ \ \ \ getName()\ \=\=\ old\ getName()\r\n\ \ \ \ \ argsNb()\ \=\=\ old\ argsNb()\ </pre>\r\n
+numComments=6

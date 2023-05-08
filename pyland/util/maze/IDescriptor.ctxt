@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.target=IDescriptor
+comment1.params=withLight
+comment1.target=java.lang.String\ describe(boolean)
+numComments=2

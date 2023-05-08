@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Command
+comment0.text=\r\n\ Implantation\ partielle\ du\ type\ des\ commandes.\r\n\ Le\ nom\ des\ commandes\ doit\ \u00C3\u00AAtre\ construit\ sous\ la\ forme\ \:\r\n\ \ <code>UnNom\ +\ "Command"</code>.\r\n\ @inv\ <pre>\r\n\ \ \ \ \ getName()\ correspond\ au\ nom\ de\ la\ classe\ priv\u00C3\u00A9\ du\ suffixe\ "Command"\r\n\ \ \ \ \ describeLastAction()\ est\ de\ la\ forme\ \:\ getName()\ +\ "\ \:\ ..."\ </pre>\r\n
+comment1.params=args
+comment1.target=Command(java.lang.Object[])
+comment1.text=\r\n\ Une\ commande\ munie\ d'une\ s\u00C3\u00A9quence\ d'arguments\ <code>args</code>.\r\n\ Ce\ sera\ au\ constructeur\ de\ la\ sous-classe\ de\ fournir\ un\ tableau\ adapt\u00C3\u00A9.\r\n\ @pre\ <pre>\r\n\ \ \ \ \ args\ \!\=\ null\ </pre>\r\n\ @post\ <pre>\r\n\ \ \ \ \ argsNb()\ \=\=\ args.length\r\n\ \ \ \ \ forall\ i,\ 0\ <\=\ i\ <\ |args|\ \:\ getArgument(i).equals(args[i])\r\n\ \ \ \ \ describeLastAction().equals(getName()\ +\ "\ \:\ ")\ </pre>\r\n
+comment2.params=
+comment2.target=Command()
+comment2.text=\r\n\ Une\ commande\ sans\ argument.\r\n\ @post\ <pre>\r\n\ \ \ \ \ argsNb()\ \=\=\ 0\r\n\ \ \ \ \ describeLastAction().equals(getName()\ +\ "\ \:\ ")\ </pre>\r\n
+comment3.params=
+comment3.target=int\ argsNb()
+comment4.params=
+comment4.target=java.lang.String\ describeLastAction()
+comment5.params=i
+comment5.target=java.lang.Object\ getArgument(int)
+comment6.params=
+comment6.target=java.lang.String\ getName()
+comment7.params=desc
+comment7.target=void\ setDescription(java.lang.String)
+comment7.text=\r\n\ Fixe\ la\ description\ de\ la\ derni\u00C3\u00A8re\ ex\u00C3\u00A9cution\ de\ cette\ commande.\r\n\ @pre\ <pre>\r\n\ \ \ \ \ desc\ \!\=\ null\ </pre>\r\n\ @post\ <pre>\r\n\ \ \ \ \ argsNb()\ \=\=\ old\ argsNb()\r\n\ \ \ \ \ forall\ i,\ 0\ <\=\ i\ <\ argsNb()\ \:\ getArgument(i)\ \=\=\ old\ getArgument(i)\r\n\ \ \ \ \ describeLastAction().equals(getName()\ +\ "\ \:\ "\ +\ desc)\ </pre>\r\n
+numComments=8
