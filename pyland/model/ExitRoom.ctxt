@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=ExitRoom
+comment0.text=\r\n\ D\u00E9crivez\ votre\ classe\ ExitRoom\ ici.\r\n\r\n\ @author\ (votre\ nom)\r\n\ @version\ (un\ num\u00E9ro\ de\ version\ ou\ une\ date)\r\n
+comment1.params=
+comment1.target=ExitRoom()
+comment1.text=\r\n\ Constructeur\ d'objets\ de\ classe\ ExitRoom\r\n
+comment2.params=v
+comment2.target=void\ setVisitor(IPlayer)
+comment2.text=\r\n\ @post\ <pre>\r\n\ \ \ \ \ getVisitor().hasLeft()\r\n\ \ \ \ \ fengShuiEffect().contains("Vous\ \u00EAtes\ sorti\ des\ griffes\ de"\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ +\ "\ PY\ le\ mal\u00E9fique\ \!")\ </pre>\r\n
+comment3.params=
+comment3.target=java.lang.String\ fengShuiEffect()
+numComments=4

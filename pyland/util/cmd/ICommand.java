@@ -18,7 +18,7 @@ import pyland.model.IPlayer;
  * $PRE$
  *     args != null
  * $POST$
- *     Let min ::= min(argsNb(), |args|)
+ *     Let min ::= min(argsNb(), args.length)
  *     forall i, 0 <= i < min :
  *         getArgument(i) est l'objet que représente la chaîne args[i]
  *     forall i, min <= i < argsNb() :

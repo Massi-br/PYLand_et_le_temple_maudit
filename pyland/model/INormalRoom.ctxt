@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=INormalRoom
+comment0.text=\r\n\ @cons\ <pre>\r\n\ \ \ \ \ $POST$\r\n\ \ \ \ \ \ \ \ \ getVisitor()\ \=\=\ null\ </pre>\r\n
+comment1.params=v
+comment1.target=void\ setVisitor(IPlayer)
+comment1.text=\r\n\ @post\ <pre>\r\n\ \ \ \ \ Let\ x\ \:\:\=\ old\ v.getPowerLevel()\r\n\ \ \ \ \ getVisitor().getPowerLevel()\ \=\=\ max(0,\ x\ -\ POWER_LOSS)\ </pre>\r\n
+numComments=2

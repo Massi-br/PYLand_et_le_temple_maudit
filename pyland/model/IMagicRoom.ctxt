@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=IMagicRoom
+comment0.text=\r\n\ @cons\ <pre>\r\n\ \ \ \ \ $POST$\r\n\ \ \ \ \ \ \ \ \ getVisitor()\ \=\=\ null\ </pre>\r\n
+comment1.params=v
+comment1.target=void\ setVisitor(IPlayer)
+comment1.text=\r\n\ @post\ <pre>\r\n\ \ \ \ \ Let\ x\ \:\:\=\ old\ v.getPowerLevel()\r\n\ \ \ \ \ x\ +\ MIN\ <\=\ getVisitor().getPowerLevel()\ <\=\ x\ +\ MAX\r\n\ \ \ \ \ fengShuiEffect().contains("Vous\ sentez\ un\ flot\ d'\u00C3\u00A9nergie\ positive"\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ +\ "\ vous\ envahir.")\ </pre>\r\n
+numComments=2

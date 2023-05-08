@@ -1,12 +1,14 @@
 package pyland.util.maze;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.Stack;
 
+import pyland.model.IPlayer;
 import pyland.model.IRoom;
 import pyland.model.IRoomNetwork;
-import pyland.model.Room;
 import pyland.model.RoomNetworkFactory;
 import pyland.util.Direction;
 import pyland.util.RoomNotFoundException;
@@ -29,6 +31,7 @@ public class Maze {
 
     private static final int ROW = 0;
     private static final int COL = 1;
+    private static final float SUB_TYPE_RATIO = 0.4f;
     private static final float MORE_CONNEXIONS = 0.15f;
 
     // ATTRIBUTS
@@ -167,6 +170,26 @@ public class Maze {
         return maze[i][j];
     }
 
+    boolean powerPlayerAround(int i, int j) {
+        for (int r = -1; r < 2; r++) {
+            for (int c = -1; c < 2; c++) {
+                if (r == 0 && c == 0) {
+                    continue;
+                }
+                int row = i + r;
+                int col = j + c;
+                if (row >= 0 && row < rowsNb()
+                        && col >= 0 && col < colsNb()) {
+                    IPlayer p = maze[row][col].getRoom().getVisitor();
+                    if (p != null && p.getPowerLevel() > 0) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
     /**
      * Détecte les coordonnées (dans maze) de la pièce r.
      * Retourne null si pas trouvée.
@@ -187,12 +210,71 @@ public class Maze {
      *  du labyrinthe.
      */
     private void initRooms() {
+        Set[] specials = getSpecialNumbers();
         maze = new MazeRoom[rows][cols];
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                maze[i][j] = new MazeRoom(new Room());
+                Integer x = new Integer(i * cols + j);
+                if (specials[0].contains(x)) {
+                    maze[i][j] = MazeRoom.createMagicRoom(this, i, j);
+                } else if (specials[1].contains(x)) {
+                    maze[i][j] = MazeRoom.createDoomRoom(this, i, j);
+                } else if (specials[2].contains(x)) {
+                    maze[i][j] = MazeRoom.createMonsterRoom(this, i, j);
+                } else {
+                    maze[i][j] = MazeRoom.createNormalRoom(this, i, j);
+                }
             }
         }
+        maze[0][cols - 1] = MazeRoom.createExitRoom(this, 0, cols - 1);
+    }
+
+    /**
+     * Retourne 3 ensembles de coordonnées aléatoires (sous forme d'entiers).
+     * Chaque élément entier n devra être décodé ainsi :
+     * - row = n / cols
+     * - col = n % cols
+     * Les ensembles sont deux à deux disjoints.
+     * Le premier donne les coordonnées des MagicRooms.
+     * Le deuxième donne les coordonnées des DoomRooms.
+     * Le dernier donne les coordonnées des MonsterRooms.
+     */
+    private Set[] getSpecialNumbers() {
+        final int size = rows * cols;
+        final int entry = size - cols;
+        final int exit = cols - 1;
+
+        int specialRoomsNb = (int) (size * SUB_TYPE_RATIO);
+        final int[] numbers = new int[] {
+                4 * specialRoomsNb / 10,
+                specialRoomsNb / 5,
+                4 * specialRoomsNb / 10
+        };
+        Set[] result = new Set[3];
+        specialRoomsNb = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            result[i] = new HashSet(numbers[i]);
+            specialRoomsNb += numbers[i];
+        }
+
+        Set temp = new HashSet(specialRoomsNb);
+        for (int i = 0; i < numbers.length; i++) {
+            while (result[i].size() != numbers[i]) {
+                int k = (int) (Math.random() * size);
+                Integer x = new Integer(k);
+                if (k != entry && k != exit && !temp.contains(x)
+                        && (i == 0 || !nearEntry(k))) {
+                    temp.add(x);
+                    result[i].add(x);
+                }
+            }
+        }
+        return result;
+    }
+
+    private boolean nearEntry(int x) {
+        final int entry = (rows - 1) * cols;
+        return x == entry + 1 || x == entry - cols;
     }
 
     /**

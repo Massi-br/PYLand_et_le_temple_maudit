@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=MonsterRoom
+comment0.text=\r\n\ @inv\ <pre>\r\n\ \ \ \ \ monstersNb()\ >\=\ 0\ </pre>\r\n\r\n\ @cons\ <pre>\r\n\ \ \ \ \ $ARGS$\ int\ n\r\n\ \ \ \ \ $PRE$\ \ n\ >\ 0\r\n\ \ \ \ \ $POST$\r\n\ \ \ \ \ \ \ \ \ getVisitor()\ \=\=\ null\r\n\ \ \ \ \ \ \ \ \ monstersNb()\ \=\=\ n\ </pre>\r\n
+comment1.params=n
+comment1.target=MonsterRoom(int)
+comment1.text=\r\n\ Constructeur\ d'objets\ de\ classe\ MonsterRoom\r\n
+comment2.params=
+comment2.target=int\ monstersNb()
+comment2.text=\r\n\ Le\ nombre\ de\ monstres\ pr\u00E9sents\ dans\ cette\ salle.\r\n
+comment3.params=v
+comment3.target=void\ setVisitor(IPlayer)
+comment3.text=\r\n\ @post\ <pre>\r\n\ \ \ \ \ Let\ x\ \:\:\=\ old\ monstersNb()\r\n\ \ \ \ \ \ \ \ \ y\ \:\:\=\ old\ v.getHitPoints()\r\n\ \ \ \ \ 0\ <\ x\ <\=\ y\r\n\ \ \ \ \ \ \ \ \=\=>\ monstersNb()\ \=\=\ 0\r\n\ \ \ \ \ \ \ \ \ \ \ \ getVisitor().getHitPoints()\ \=\=\ y\ +\ x\ /\ 2\r\n\ \ \ \ \ \ \ \ \ \ \ \ fengShuiEffect().contains("Vous\ combattez\ victorieusement\ \!")\r\n\ \ \ \ \ x\ >\ y\r\n\ \ \ \ \ \ \ \ \=\=>\ monstersNb()\ \=\=\ x\ +\ y\ /\ 2\r\n\ \ \ \ \ \ \ \ \ \ \ \ getVisitor().isDead()\r\n\ \ \ \ \ \ \ \ \ \ \ \ fengShuiEffect().contains("Vous\ succombez"\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ +\ "\ dans\ un\ r\u00C3\u00A2le\ affreux...")\ </pre>\r\n
+comment4.params=
+comment4.target=java.lang.String\ fengShuiEffect()
+comment5.params=
+comment5.target=void\ unsetVisitor()
+comment5.text=\r\n\ @post\ <pre>\r\n\ \ \ \ \ monstersNb()\ \=\=\ old\ monstersNb()\ </pre>\r\n
+numComments=6

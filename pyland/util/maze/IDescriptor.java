@@ -8,6 +8,10 @@ interface IDescriptor {
 
     String EMPTY3 = "   ";
 
+    String VISITED1 = ".";
+
+    String VISITED3 = " . ";
+
     // REQUETES
 
     String describe(boolean withLight);

@@ -15,6 +15,10 @@ class GoCommand extends Command {
 
     // ATTRIBUTS STATIQUES
 
+    private static final String INDENT = "     ";
+
+    // CONSTRUCTEURS
+
     /**
      * @pre <pre>
      *     args != null </pre>
@@ -51,12 +55,25 @@ class GoCommand extends Command {
                 crtRoom = net.getRoom(crtRoom, dir);
                 p.unsetLocation();
                 p.setLocation(crtRoom);
-                setDescription("Vous changez de pièce.");
+                String desc = crtRoom.fengShuiEffect();
+                setDescription(indent(desc));
             }
         }
     }
 
     // OUTILS
+
+    private static String indent(String message) {
+        String result = "Vous avez changé de pièce.";
+        String[] parts = message.split("\n");
+        for (int i = 0; i < parts.length; i++) {
+            String s = parts[i].trim();
+            if (!s.equals("")) {
+                result += "\n" + INDENT + s;
+            }
+        }
+        return result;
+    }
 
     private static Object[] convertArgs(String[] args) {
         if (args == null) {

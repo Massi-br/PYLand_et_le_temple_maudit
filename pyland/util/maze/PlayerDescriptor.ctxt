@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=PlayerDescriptor
+comment1.params=p
+comment1.target=PlayerDescriptor(pyland.model.IPlayer)
+comment2.params=light
+comment2.target=java.lang.String\ describe(boolean)
+numComments=3

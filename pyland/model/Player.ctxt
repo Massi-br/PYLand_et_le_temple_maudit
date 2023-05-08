@@ -1,21 +1,43 @@
 #BlueJ class context
 comment0.target=Player
-comment0.text=\r\n\ Mod\u00C3\u00A9lise\ les\ joueurs.\r\n\ Un\ joueur\ se\ d\u00C3\u00A9place\ de\ salle\ en\ salle\ \u00C3\u00A0\ la\ recherche\ de\ la\ sortie\r\n\ \ du\ labyrinthe.\r\n\ @inv\ <pre>\r\n\ \ \ \ \ forall\ r\ in\ IRoom\ \:\r\n\ \ \ \ \ \ \ \ \ this.getLocation()\ \=\=\ r\ \=\=>\ this\ \=\=\ r.getVisitor()\ </pre>\r\n\ @cons\ <pre>\r\n\ \ \ \ \ $DESC$\ Un\ joueur\ qui\ n'est\ pas\ encore\ plac\u00C3\u00A9\ dans\ une\ salle.\r\n\ \ \ \ \ $ARGS$\ -\r\n\ \ \ \ \ $POST$\r\n\ \ \ \ \ \ \ \ \ getLocation()\ \=\=\ null\r\n\ \ \ \ \ \ \ \ \ \!hasLeft()\ </pre>\r\n
-comment1.params=
-comment1.target=Player()
+comment0.text=\r\n\ Mod\u00E9lise\ les\ joueurs.\r\n\ Un\ joueur\ se\ d\u00E9place\ de\ salle\ en\ salle\ \u00C3\u00A0\ la\ recherche\ de\ la\ sortie\r\n\ \ du\ labyrinthe.\r\n\ @inv\ <pre>\r\n\ \ \ \ \ forall\ r\ in\ IRoom\ \:\ this.getLocation()\ \=\=\ r\ \=\=>\ this\ \=\=\ r.getVisitor()\r\n\ \ \ \ \ getHitPoints()\ >\=\ 0\r\n\ \ \ \ \ isDead()\ <\=\=>\ getHitPoints()\ \=\=\ 0\r\n\ \ \ \ \ isDead()\ \=\=>\ hasLeft()\r\n\ \ \ \ \ getPowerLevel()\ >\=\ 0\ </pre>\r\n\ @cons\ <pre>\r\n\ \ \ \ \ $DESC$\ Un\ joueur\ qui\ n'est\ pas\ encore\ plac\u00E9\ dans\ une\ salle.\r\n\ \ \ \ \ $ARGS$\ int\ hp\r\n\ \ \ \ \ $PRE$\r\n\ \ \ \ \ \ \ \ \ hp\ >\ 0\r\n\ \ \ \ \ $POST$\r\n\ \ \ \ \ \ \ \ \ getLocation()\ \=\=\ null\r\n\ \ \ \ \ \ \ \ \ \!hasLeft()\r\n\ \ \ \ \ \ \ \ \ getHitPoints()\ \=\=\ hp\r\n\ \ \ \ \ \ \ \ \ getPowerLevel()\ \=\=\ 0\ </pre>\r\n
+comment1.params=hp
+comment1.target=Player(int)
+comment1.text=\r\n\ CONSTRUCTEUR\ DE\ L'OBJET\ PLAYER\r\n
+comment10.params=q
+comment10.target=void\ setMorePowerful(int)
+comment10.text=\r\n\ Transforme\ ce\ joueur\ en\ super\ h\u00E9ro\ pour\ q\ tours.\r\n\ @pre\ <pre>\r\n\ \ \ \ \ q\ >\=\ 0\r\n\ \ \ \ \ \!hasLeft()\ </pre>\r\n\ @post\ <pre>\r\n\ \ \ \ \ \!hasLeft()\r\n\ \ \ \ \ getLocation()\ \=\=\ old\ getLocation()\r\n\ \ \ \ \ getHitPoints()\ \=\=\ old\ getHitPoints()\r\n\ \ \ \ \ getPowerLevel()\ \=\=\ old\ getPowerLevel()\ +\ q\ </pre>\r\n
+comment11.params=q
+comment11.target=void\ setLessPowerful(int)
+comment11.text=\r\n\ Fait\ perdre\ des\ super\ pouvoirs\ au\ joueur.\r\n\ @pre\ <pre>\r\n\ \ \ \ \ getPowerLevel()\ >\=\ q\ >\=\ 0\r\n\ \ \ \ \ \!hasLeft()\ </pre>\r\n\ @post\ <pre>\r\n\ \ \ \ \ \!hasLeft()\r\n\ \ \ \ \ getLocation()\ \=\=\ old\ getLocation()\r\n\ \ \ \ \ getHitPoints()\ \=\=\ old\ getHitPoints()\r\n\ \ \ \ \ getPowerLevel()\ \=\=\ old\ getPowerLevel()\ -\ q\ </pre>\r\n
+comment12.params=q
+comment12.target=void\ strengthen(int)
+comment12.text=\r\n\ Augmente\ le\ nombre\ de\ points\ d'attaque\ de\ ce\ joueur.\r\n\ @pre\ <pre>\r\n\ \ \ \ \ q\ >\=\ 0\r\n\ \ \ \ \ \!hasLeft()\ </pre>\r\n\ @post\ <pre>\r\n\ \ \ \ \ \!hasLeft()\r\n\ \ \ \ \ getLocation()\ \=\=\ old\ getLocation()\r\n\ \ \ \ \ getPowerLevel()\ \=\=\ old\ getPowerLevel()\r\n\ \ \ \ \ getHitPoints()\ \=\=\ old\ getHitPoints()\ +\ q\ </pre>\r\n
+comment13.params=
+comment13.target=void\ unsetLocation()
+comment13.text=\r\n\ Dissocie\ ce\ joueur\ de\ sa\ salle.\r\n\ @pre\ <pre>\r\n\ \ \ \ \ \!hasLeft()\r\n\ \ \ \ \ getLocation()\ \!\=\ null\ </pre>\r\n\ @post\ <pre>\r\n\ \ \ \ \ getLocation()\ \=\=\ null\r\n\ \ \ \ \ l'\u00E9tat\ du\ joueur\ peut\ avoir\ chang\u00E9\ selon\ le\ type\ de\ old\ getLocation()\r\n\ </pre>\r\n
 comment2.params=
-comment2.target=IRoom\ getLocation()
-comment2.text=\r\n\ La\ salle\ dans\ laquelle\ se\ trouve\ le\ joueur.\r\n
+comment2.target=int\ getHitPoints()
+comment2.text=\r\n\ Le\ nombre\ de\ points\ d'attaque\ de\ ce\ joueur.\r\n
 comment3.params=
-comment3.target=boolean\ hasLeft()
-comment3.text=\r\n\ Indique\ si\ le\ joueur\ a\ arr\u00C3\u00AAt\u00C3\u00A9\ la\ partie.\r\n
+comment3.target=IRoom\ getLocation()
+comment3.text=\r\n\ La\ salle\ dans\ laquelle\ se\ trouve\ le\ joueur.\r\n
 comment4.params=
-comment4.target=void\ leave()
-comment4.text=\r\n\ Fait\ s'arr\u00C3\u00AAter\ le\ joueur.\r\n\ @pre\ <pre>\r\n\ \ \ \ \ \!hasLeft()\ </pre>\r\n\ @post\ <pre>\r\n\ \ \ \ \ hasLeft()\r\n\ \ \ \ \ getLocation()\ \=\=\ old\ getLocation()\ </pre>\r\n
-comment5.params=r
-comment5.target=void\ setLocation(IRoom)
-comment5.text=\r\n\ Associe\ la\ salle\ <code>r</code>\ \u00C3\u00A0\ ce\ joueur.\r\n\ @pre\ <pre>\r\n\ \ \ \ \ \!hasLeft()\r\n\ \ \ \ \ getLocation()\ \=\=\ null\ &&\ r\ \!\=\ null\r\n\ \ \ \ \ r.getVisitor()\ \=\=\ null\ ||\ r.getVisitor()\ \=\=\ this\ </pre>\r\n\ @post\ <pre>\r\n\ \ \ \ \ getLocation()\ \=\=\ r\ </pre>\r\n
+comment4.target=int\ getPowerLevel()
+comment4.text=\r\n\ La\ quantit\u00E9\ de\ superpouvoir\ du\ joueur.\r\n
+comment5.params=
+comment5.target=boolean\ isDead()
+comment5.text=\r\n\ Indique\ si\ le\ joueur\ est\ mort.\r\n
 comment6.params=
-comment6.target=void\ unsetLocation()
-comment6.text=\r\n\ Dissocie\ ce\ joueur\ de\ sa\ salle.\r\n\ @pre\ <pre>\r\n\ \ \ \ \ \!hasLeft()\r\n\ \ \ \ \ getLocation()\ \!\=\ null\ </pre>\r\n\ @post\ <pre>\r\n\ \ \ \ \ getLocation()\ \=\=\ null\ </pre>\r\n
-numComments=7
+comment6.target=boolean\ hasLeft()
+comment6.text=\r\n\ Indique\ si\ le\ joueur\ a\ arr\u00E9t\u00E9\ la\ partie.\r\n
+comment7.params=
+comment7.target=void\ leave()
+comment7.text=\r\n\ Fait\ s'arr\u00E9ter\ le\ joueur.\r\n\ @pre\ <pre>\r\n\ \ \ \ \ \!hasLeft()\ </pre>\r\n\ @post\ <pre>\r\n\ \ \ \ \ hasLeft()\r\n\ \ \ \ \ getLocation()\ \=\=\ old\ getLocation()\r\n\ \ \ \ \ getPowerLevel()\ \=\=\ old\ getPowerLevel()\r\n\ \ \ \ \ getHitPoints()\ \=\=\ old\ getHitPoints()\ </pre>\r\n
+comment8.params=
+comment8.target=void\ kill()
+comment8.text=\r\n\ Tue\ le\ joueur.\r\n\ @pre\r\n\ \ \ \ \ \!hasLeft()\r\n\ @post\ <pre>\r\n\ \ \ \ \ getLocation()\ \=\=\ old\ getLocation()\r\n\ \ \ \ \ getPowerLevel()\ \=\=\ old\ getPowerLevel()\r\n\ \ \ \ \ getHitPoints()\ \=\=\ 0\r\n\ \ \ \ \ hasLeft()\ </pre>\r\n
+comment9.params=r
+comment9.target=void\ setLocation(IRoom)
+comment9.text=\r\n\ Associe\ la\ salle\ <code>r</code>\ \u00C3\u00A0\ ce\ joueur.\r\n\ @pre\ <pre>\r\n\ \ \ \ \ \!hasLeft()\r\n\ \ \ \ \ getLocation()\ \=\=\ null\ &&\ r\ \!\=\ null\r\n\ \ \ \ \ r.getVisitor()\ \=\=\ null\ ||\ r.getVisitor()\ \=\=\ this\ </pre>\r\n\ @post\ <pre>\r\n\ \ \ \ \ getLocation()\ \=\=\ r\r\n\ \ \ \ \ l'\u00E9tat\ du\ joueur\ peut\ avoir\ chang\u00E9\ selon\ le\ type\ de\ r\ </pre>\r\n
+numComments=14

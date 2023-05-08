@@ -4,15 +4,17 @@ package pyland.model;
  * Modélise les salles du labyrinthe.
  * Les salles sont reliées entre elles et le joueur les traverse.
  * @inv <pre>
- *     forall p in IPlayer :
- *         this.getVisitor() == p ==> this == p.getLocation() </pre>
- * @cons <pre>
- *     $POST$
- *         getVisitor() == null </pre>
+ *     forall p in IPlayer : this.getVisitor() == p ==> this == p.getLocation()
+ *     fengShuiEffect() != null </pre>
  */
 public interface IRoom {
 
     // REQUETES
+
+    /**
+     * Une chaîne décrivant l'effet feng shui de cette salle sur son visiteur.
+     */
+    String fengShuiEffect();
 
     /**
      * Le joueur qui se trouve dans cette salle.
@@ -28,7 +30,8 @@ public interface IRoom {
      *     v != null && !v.hasLeft()
      *     v.getLocation() == null || v.getLocation() == this </pre>
      * @post <pre>
-     *     getVisitor() == v </pre>
+     *     getVisitor() == v
+     *     fengShuiEffect() reflète l'effet feng shui sur getVisitor() </pre>
      */
     void setVisitor(IPlayer v);
 
@@ -38,7 +41,8 @@ public interface IRoom {
      *     getVisitor() != null
      *     !getVisitor().hasLeft() </pre>
      * @post <pre>
-     *     getVisitor() == null </pre>
+     *     getVisitor() == null
+     *     fengShuiEffect().equals("") </pre>
      */
     void unsetVisitor();
 }

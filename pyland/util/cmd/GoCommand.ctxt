@@ -6,6 +6,8 @@ comment1.target=GoCommand(java.lang.String[])
 comment1.text=\r\n\ @pre\ <pre>\r\n\ \ \ \ \ args\ \!\=\ null\ </pre>\r\n\ @post\ <pre>\r\n\ \ \ \ \ args.length\ \=\=\ 0\ \=\=>\ getArgument(0)\ \=\=\ null\r\n\ \ \ \ \ args.length\ >\ 0\ \ \=\=>\ getArgument(0)\ \=\=\ Direction.valueOf(args[0])\r\n\ </pre>\r\n
 comment2.params=p
 comment2.target=void\ executeFor(pyland.model.IPlayer)
-comment3.params=args
-comment3.target=java.lang.Object[]\ convertArgs(java.lang.String[])
-numComments=4
+comment3.params=message
+comment3.target=java.lang.String\ indent(java.lang.String)
+comment4.params=args
+comment4.target=java.lang.Object[]\ convertArgs(java.lang.String[])
+numComments=5

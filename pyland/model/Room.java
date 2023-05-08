@@ -1,28 +1,37 @@
 package pyland.model;
 
+
 /**
- * ModÃ©lise les salles du labyrinthe.
- * Les salles sont reliÃ©es entre elles et le joueur les traverse.
+ * Modélise les salles du labyrinthe.
+ * Les salles sont reliées entre elles et le joueur les traverse.
  * @inv <pre>
- *     forall p in IPlayer :
- *         this.getVisitor() == p ==> this == p.getLocation() </pre>
- * @cons <pre>
- *     $POST$
- *         getVisitor() == null </pre>
+ *     forall p in IPlayer : this.getVisitor() == p ==> this == p.getLocation()
+ *     fengShuiEffect() != null </pre>
  */
-public class Room implements  IRoom {
-    private IPlayer visitor;
-    private boolean reccal= false;
+public abstract class Room implements IRoom {
     
+    private IPlayer getVisitor;
+    private boolean reccall =false;
+    
+    
+    /**
+     * Constructeur de l'objet Room 
+     */
     public Room(){
-        visitor = null;
+        this.getVisitor = null;
     }
+
     // REQUETES
+    /**
+     * Une chaîne décrivant l'effet feng shui de cette salle sur son visiteur.
+     */
+    public abstract String fengShuiEffect();
+    
     /**
      * Le joueur qui se trouve dans cette salle.
      */
     public IPlayer getVisitor(){
-        return visitor;
+        return this.getVisitor;
     }
 
     // COMMANDES
@@ -34,13 +43,14 @@ public class Room implements  IRoom {
      *     v != null && !v.hasLeft()
      *     v.getLocation() == null || v.getLocation() == this </pre>
      * @post <pre>
-     *     getVisitor() == v </pre>
+     *     getVisitor() == v
+     *     fengShuiEffect() reflète l'effet feng shui sur getVisitor() </pre>
      */
     public void setVisitor(IPlayer v){
-        if(visitor != null || v == null || v.hasLeft() ||(v.getLocation() != null && v.getLocation() != this)){
-            throw new AssertionError("");
+        if(getVisitor != null || v == null || v.hasLeft() || v.getLocation() != null && v.getLocation() != this){
+            throw new AssertionError("erreur d'association ");
         }
-        visitor = v;
+        this.getVisitor = v;
         if(v.getLocation() == null){
             v.setLocation(this);
         }
@@ -52,18 +62,18 @@ public class Room implements  IRoom {
      *     getVisitor() != null
      *     !getVisitor().hasLeft() </pre>
      * @post <pre>
-     *     getVisitor() == null </pre>
+     *     getVisitor() == null
+     *     fengShuiEffect().equals("") </pre>
      */
     public void unsetVisitor(){
-        if(visitor ==null || visitor.hasLeft()){
-            throw new AssertionError("");
+        if( getVisitor == null || getVisitor.hasLeft() ){
+            throw new AssertionError("Erreur de disassociation");
         }
-        if(!reccal){
-            reccal =true;
-            visitor.unsetLocation();
-            reccal= false;
+        if(!reccall){
+            reccall = true;
+            getVisitor().unsetLocation();
+            reccall =false;
         }
-        visitor = null;
-        
+        this.getVisitor = null;
     }
 }

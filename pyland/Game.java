@@ -14,6 +14,8 @@ public class Game {
 
     // ATTRIBUTS STATIQUES
 
+    private static final String SUPER = "+";
+    private static final int HP = 10;
     private static final int MIN = Maze.MIN_SIZE;
 
     // ATTRIBUTS
@@ -41,12 +43,12 @@ public class Game {
 
     public void play() {
         maze.build();
-        IPlayer player = new Player();
+        IPlayer player = new Player(HP);
         player.setLocation(maze.entry());
         maze.mark(maze.entry());
         output.println(maze.describe());
         while (!player.hasLeft()) {
-            output.print(getPrompt());
+            output.print(getPrompt(player));
             readNextCommandFromInput();
             executeLastCommandFor(player);
             printLastReport();
@@ -56,8 +58,12 @@ public class Game {
 
     // OUTILS
 
-    private String getPrompt() {
-        return "pyland > ";
+    private String getPrompt(IPlayer p) {
+        String res = "(" + p.getHitPoints() + ")[";
+        for (int i = 0; i < p.getPowerLevel(); i++) {
+            res += SUPER;
+        }
+        return res + "]> ";
     }
 
     private void readNextCommandFromInput() {
@@ -88,12 +94,14 @@ public class Game {
     }
 
     private void printFinalReport(IPlayer p) {
-        if (p.getLocation() != maze.exit()) {
+        if (p.isDead()) {
+            output.println("Quel dommage ! Vous sortez les pieds devant !");
+        } else if (p.getLocation() != maze.exit()) {
             output.println("Bouh le lâche ! Vous avez abandonné !");
         } else {
-            output.println("Bravo ! Vous avez gagné, vous êtes sorti"
-                    + " des griffes de PY le maléfique !"
-            );
+            output.println("Bravo ! Vous avez gagné, vous avez réussi votre "
+                    + "mission.\n"
+                    + "J'en pleurerais presque de rage ! (presque...)");
         }
     }
 
